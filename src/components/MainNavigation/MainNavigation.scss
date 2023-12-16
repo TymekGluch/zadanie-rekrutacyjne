@@ -1,0 +1,210 @@
+@import '../../styles/colors';
+@import '../../styles/handlers';
+
+.main-navigation {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: pxToRem(83);
+    padding-top: pxToRem(35);
+
+    &__toggle-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: pxToRem(48);
+        height: pxToRem(48);
+        border-radius: 50%;
+        background: transparent;
+
+        &--turned-on {
+            display: none;
+        }
+
+        &:hover, 
+        &:active, 
+        &:focus {
+           background: $hover;
+           border: none;
+           outline: none;
+        }
+
+        @media screen and (min-width: 1024px) {
+            display: none;
+        }
+    }
+
+    &__menu {
+        display: none;
+
+        &--open {
+            display: flex;
+        }
+
+        @media screen and (min-width: 1024px) {
+            display: flex;
+        }
+    }
+
+    &__link {
+        width: pxToRem(148);
+        height: pxToRem(25);
+    }
+}
+
+.menu {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0;
+    width: 100vw;
+    height: 100dvh;
+    padding: pxToRem(35) pxToRem(30);
+    background: rgba($primary-text, 90%);
+    transform: translate(-50%, -50%);
+
+    @media screen and (min-width: 1024px) {
+        position: static;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: pxToRem(45);
+        width: max-content;
+        height: fit-content;
+        padding: 0;
+        background: $primary-background;
+        transform: none;
+    }
+
+    &__logo {
+        width: pxToRem(148);
+        height: pxToRem(25);
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: fit-content;
+        padding-bottom: pxToRem(16);
+        border-bottom: solid pxToRem(1) rgba($secondary-text, 50%);
+
+        @media screen and (min-width: 1024px) {
+            display: none;
+        }
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: min-content;
+        list-style: none;
+
+        @media screen and (min-width: 1024px) {
+            flex-direction: row;
+            gap: pxToRem(45);
+        }
+    }
+
+    &__list-item {
+        width: 100%;
+        border-bottom: solid pxToRem(1) rgba($secondary-text, 50%);
+
+        @media screen and (min-width: 1024px) {
+            border: none;
+        }
+    }
+
+    &__item-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $primary-background;
+        font-size: pxToRem(20);
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: pxToRem(2);
+        padding: pxToRem(16) 0;
+
+        @media screen and (min-width: 1024px) {
+            color: $accent-text;
+            font-size: pxToRem(16);
+            font-weight: 400;
+
+            &:hover,
+            &:focus {
+                color: $accent-item;
+            }
+        }
+    }
+
+    &__login-button {
+        width: 100%;
+        height: fit-content;
+        margin-top: pxToRem(16);
+        color: $accent-text;
+        font-size: pxToRem(20);
+        font-weight: 300;
+        letter-spacing: pxToRem(2);
+        text-transform: uppercase;
+        
+        @media screen and (min-width: 1024px) {
+            width: fit-content;
+            padding: pxToRem(12) pxToRem(30);
+            margin: 0;
+            background: $accent-item;
+            font-size: pxToRem(16);
+            font-weight: 400;
+        }
+    }
+
+    &__close-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: pxToRem(48);
+        height: pxToRem(48);
+        background: transparent;
+        border-radius: 50%;
+
+        &:hover, 
+        &:active, 
+        &:focus {
+            background: $hover;
+            border: none;
+            outline: none;
+        }
+    }
+
+    &__socials {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        gap: pxToRem(35);
+        padding-bottom: pxToRem(35);
+
+        @media screen and (min-width: 1024px) {
+            display: none;
+        }
+    }
+
+    &__social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
