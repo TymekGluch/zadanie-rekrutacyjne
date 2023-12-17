@@ -1,27 +1,26 @@
-@import '/src/styles/handlers';
+@import '/src/styles/index';
 
 .overflow-hidden {
   overflow: hidden;
 }
 
 .main_article {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100dvw;
   min-height: 100dvh;
-  padding: 0 pxToRem(30);
+  padding: 0 $primary-horizontal-space;
   margin: auto;
-  overflow-x: hidden;
 
-  @media screen and (min-width: 1024px) {
-    max-width: pxToRem(1120);
+  @include lg {
+    max-width: $dc-content-width;
 
   }
 
-  @media screen and (min-width: 1180px) {
+  @include rwd(1180px) {
     padding: 0;
-
   }
 }

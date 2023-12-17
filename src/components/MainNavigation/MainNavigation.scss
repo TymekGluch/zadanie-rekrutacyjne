@@ -1,5 +1,4 @@
-@import '../../styles/colors';
-@import '../../styles/handlers';
+@import '../../styles/index';
 
 .main-navigation {
     position: relative;
@@ -8,7 +7,7 @@
     align-items: center;
     width: 100%;
     height: pxToRem(83);
-    padding-top: pxToRem(35);
+    padding-top: $primary-vertical-space;
 
     &__toggle-menu {
         display: flex;
@@ -31,7 +30,7 @@
            outline: none;
         }
 
-        @media screen and (min-width: 1024px) {
+        @include lg {
             display: none;
         }
     }
@@ -43,7 +42,7 @@
             display: flex;
         }
 
-        @media screen and (min-width: 1024px) {
+        @include lg {
             display: flex;
         }
     }
@@ -64,11 +63,11 @@
     gap: 0;
     width: 100vw;
     height: 100dvh;
-    padding: pxToRem(35) pxToRem(30);
+    padding: $primary-vertical-space $primary-horizontal-space;
     background: rgba($primary-text, 90%);
     transform: translate(-50%, -50%);
 
-    @media screen and (min-width: 1024px) {
+    @include lg {
         position: static;
         align-items: center;
         flex-wrap: nowrap;
@@ -94,7 +93,7 @@
         padding-bottom: pxToRem(16);
         border-bottom: solid pxToRem(1) rgba($secondary-text, 50%);
 
-        @media screen and (min-width: 1024px) {
+        @include lg {
             display: none;
         }
     }
@@ -114,7 +113,7 @@
         height: min-content;
         list-style: none;
 
-        @media screen and (min-width: 1024px) {
+        @include lg {
             flex-direction: row;
             gap: pxToRem(45);
         }
@@ -124,7 +123,7 @@
         width: 100%;
         border-bottom: solid pxToRem(1) rgba($secondary-text, 50%);
 
-        @media screen and (min-width: 1024px) {
+        @include lg {
             border: none;
         }
     }
@@ -140,7 +139,7 @@
         letter-spacing: pxToRem(2);
         padding: pxToRem(16) 0;
 
-        @media screen and (min-width: 1024px) {
+        @include lg {
             color: $accent-text;
             font-size: pxToRem(16);
             font-weight: 400;
@@ -155,14 +154,14 @@
     &__login-button {
         width: 100%;
         height: fit-content;
-        margin-top: pxToRem(16);
+        margin-top: pxToRem(24);
         color: $accent-text;
         font-size: pxToRem(20);
         font-weight: 300;
         letter-spacing: pxToRem(2);
         text-transform: uppercase;
         
-        @media screen and (min-width: 1024px) {
+        @include lg {
             width: fit-content;
             padding: pxToRem(12) pxToRem(30);
             margin: 0;
@@ -194,10 +193,10 @@
         position: absolute;
         bottom: 0;
         display: flex;
-        gap: pxToRem(35);
-        padding-bottom: pxToRem(35);
+        gap: $primary-vertical-space;
+        padding-bottom: $primary-vertical-space;
 
-        @media screen and (min-width: 1024px) {
+        @include lg {
             display: none;
         }
     }

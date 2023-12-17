@@ -1,4 +1,4 @@
-@import '/src/styles/colors';
+@import '/src/styles/index';
 
 body {
   display: flex;
@@ -10,6 +10,7 @@ body {
   height: 100%;
   background: $primary-background;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 *, *::before, *::after {
