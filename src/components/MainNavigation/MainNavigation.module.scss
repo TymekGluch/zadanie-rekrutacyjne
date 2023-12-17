@@ -1,6 +1,6 @@
 @import '../../styles/index';
 
-.main-navigation {
+.mainNavigation {
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -9,7 +9,7 @@
     height: pxToRem(83);
     padding-top: $primary-vertical-space;
 
-    &__toggle-menu {
+    &_toggleMenu {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -18,7 +18,7 @@
         border-radius: 50%;
         background: transparent;
 
-        &--turned-on {
+        &__turnedOn {
             display: none;
         }
 
@@ -35,10 +35,10 @@
         }
     }
 
-    &__menu {
+    &_menu {
         display: none;
 
-        &--open {
+        &__open {
             display: flex;
         }
 
@@ -47,7 +47,7 @@
         }
     }
 
-    &__link {
+    &_link {
         width: pxToRem(148);
         height: pxToRem(25);
     }
@@ -66,6 +66,7 @@
     padding: $primary-vertical-space $primary-horizontal-space;
     background: rgba($primary-text, 90%);
     transform: translate(-50%, -50%);
+    z-index: 100;
 
     @include lg {
         position: static;
@@ -79,12 +80,12 @@
         transform: none;
     }
 
-    &__logo {
+    &_logo {
         width: pxToRem(148);
         height: pxToRem(25);
     }
 
-    &__header {
+    &_header {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -98,13 +99,13 @@
         }
     }
 
-    &__link {
+    &_link {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    &__list {
+    &_list {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -119,7 +120,7 @@
         }
     }
 
-    &__list-item {
+    &_listItem {
         width: 100%;
         border-bottom: solid pxToRem(1) rgba($secondary-text, 50%);
 
@@ -128,7 +129,7 @@
         }
     }
 
-    &__item-link {
+    &_itemLink {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -151,7 +152,7 @@
         }
     }
 
-    &__login-button {
+    &_loginButton {
         width: 100%;
         height: fit-content;
         margin-top: pxToRem(24);
@@ -171,7 +172,7 @@
         }
     }
 
-    &__close-button {
+    &_closeButton {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -189,7 +190,7 @@
         }
     }
 
-    &__socials {
+    &_socials {
         position: absolute;
         bottom: 0;
         display: flex;
@@ -201,7 +202,7 @@
         }
     }
 
-    &__social-link {
+    &_socialLink {
         display: flex;
         align-items: center;
         justify-content: center;
