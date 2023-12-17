@@ -19,7 +19,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: $primary-vertical-space;
+        gap: $primary-vertical-space * 2;
         width: 100%;
         max-width: $dc-content-width;
         min-height: pxToRem(50);
@@ -35,6 +35,12 @@
             padding-left: 0;
             padding-right: 0;
         }
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__list {
@@ -63,6 +69,7 @@
 
     &__socials {
         display: flex;
+        align-items: center;
         gap: $primary-vertical-space;
 
         @include lg {
@@ -73,5 +80,11 @@
         @include rwd(1180px) {
             right: 0;
         }
+    }
+
+    &__social-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
