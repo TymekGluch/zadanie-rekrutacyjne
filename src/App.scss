@@ -1,28 +1,27 @@
-@import '/src/styles/colors';
+@import '/src/styles/handlers';
 
-body {
-  max-width: 100vw;
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.main_article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100dvw;
   min-height: 100dvh;
-  height: 100%;
-  background: $primary-background;
+  padding: 0 pxToRem(30);
+  margin: auto;
   overflow-x: hidden;
-}
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
+  @media screen and (min-width: 1024px) {
+    max-width: pxToRem(1120);
 
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Rubik', sans-serif;
-}
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  *,
-  *::after,
-  *::before {
-      animation: none !important;
-      transition: none !important;
+  @media screen and (min-width: 1180px) {
+    padding: 0;
+
   }
 }
