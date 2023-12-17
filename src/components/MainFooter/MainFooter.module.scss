@@ -7,13 +7,13 @@
     width: 100dvw;
     background: $primary-text;
 
-    &__form-wrapper {
+    &_formWrapper {
         min-height: pxToRem(50);
         width: 100%;
         background: $secondary-background;
     }
 
-    &__content-wrapper {
+    &_contentWrapper {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -37,13 +37,13 @@
         }
     }
 
-    &__link {
+    &_link {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    &__list {
+    &_list {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -56,7 +56,7 @@
         }
     }
 
-    &__item-link {
+    &_itemLink {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -67,7 +67,7 @@
         letter-spacing: pxToRem(2);
     }
 
-    &__socials {
+    &_socials {
         display: flex;
         align-items: center;
         gap: $primary-vertical-space;
@@ -82,7 +82,7 @@
         }
     }
 
-    &__social-link {
+    &_socialLink {
         display: flex;
         justify-content: center;
         align-items: center;

@@ -1,0 +1,7 @@
+@import '/src/styles/index';
+
+.section {
+    &_image {
+        max-width: pxToRem(300);
+    }
+}

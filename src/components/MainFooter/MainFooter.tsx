@@ -1,34 +1,34 @@
 import React from 'react';
-import './MainFooter.scss';
+import styles from './MainFooter.module.scss';
 import { footersNavigationItem } from './MainFooter.data';
 
 const MainFooter: React.FC = () => {
   return (
-    <footer className="footer">
-      <div className="footer__form-wrapper"></div>
+    <footer className={styles.footer}>
+      <div className={styles.footer_formWrapper}></div>
 
-      <div className="footer__content-wrapper">
-        <a href="/" className="footer__link">
+      <div className={styles.footer_contentWrapper}>
+        <a href="/" className={styles.footer_link}>
           <img
-            className="footer__logo"
+            className={styles.footer_logo}
             src="/src/assets/logo-bookmark-footer.svg"
             alt="Bookmark - logo"
           />
         </a>
 
-        <ul className="footer__list">
+        <ul className={styles.footer_list}>
           {footersNavigationItem.map(({ name, link }) => (
-            <li key={name} className="footer__list-item">
-              <a href={link} className="footer__item-link">
+            <li key={name} className={styles.footer_listItem}>
+              <a href={link} className={styles.footer_itemLink}>
                 {name}
               </a>
             </li>
           ))}
         </ul>
 
-        <div className="footer__socials">
+        <div className={styles.footer_socials}>
           <a
-            className="footer__social-link"
+            className={styles.footer_socialLink}
             href=""
             aria-label="facebook"
             title="facebook"
@@ -39,7 +39,7 @@ const MainFooter: React.FC = () => {
           </a>
 
           <a
-            className="footer__social-link"
+            className={styles.footer_socialLink}
             href="https://twitter.com/"
             aria-label="twitter"
             title="twitter"

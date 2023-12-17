@@ -1,10 +1,10 @@
 @import '/src/styles/index';
 
-.overflow-hidden {
+.overflowHidden {
   overflow: hidden;
 }
 
-.main_article {
+.mainArticle {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -14,6 +14,15 @@
   min-height: 100dvh;
   padding: 0 $primary-horizontal-space;
   margin: auto;
+
+  &_contentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: calc(100dvh - pxToRem(83) - pxToRem(145));
+  }
 
   @include lg {
     max-width: $dc-content-width;
