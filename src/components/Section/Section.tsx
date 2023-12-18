@@ -1,33 +1,30 @@
 import React from 'react';
 import styles from './Section.module.scss';
 import classNames from 'classnames';
+import {
+  HEADING_COMPONENTS,
+  SECTION_COMPONENTS,
+  SECTION_VARIANTS,
+} from './Section.costants';
 
 type ValueOf<T> = T[keyof T];
 
-const VARIANTS = {
-  WITHOUT_IMG: 'without-img',
-  LEFT_SIDE_IMG: 'left-side-img',
-  RIGHT_SIDE_IMG: 'right-side-img',
-} as const;
-
-const COMPONENTS = {
-  HEADER: 'header',
-  SECTION: 'section',
-};
-
-type Variant = ValueOf<typeof VARIANTS>;
-type Components = ValueOf<typeof COMPONENTS>;
+type Variant = ValueOf<typeof SECTION_VARIANTS>;
+type Components = ValueOf<typeof SECTION_COMPONENTS>;
+type HedingComponents = ValueOf<typeof HEADING_COMPONENTS>;
 
 type InternalProps = {
-  heading: string;
-  text: string;
+  id?: string;
+  heading?: string;
+  text?: string;
   component: Components;
+  headingComponents?: HedingComponents;
 };
 
 type Props = (
-  | { variant: typeof VARIANTS.WITHOUT_IMG; image?: never; alt?: never }
+  | { variant: typeof SECTION_VARIANTS.WITHOUT_IMG; image?: never; alt?: never }
   | {
-      variant: Omit<Variant, typeof VARIANTS.WITHOUT_IMG>;
+      variant: Omit<Variant, typeof SECTION_VARIANTS.WITHOUT_IMG>;
       image: string;
       alt: string;
     }
@@ -38,37 +35,88 @@ type SectionProps = React.PropsWithChildren<Props>;
 
 const Section: React.FC<SectionProps> = ({
   children,
-  heading,
-  text,
+  id,
+  heading = 'heading',
+  text = 'text',
   component,
+  headingComponents = 'h2',
   variant,
   image,
   alt,
 }) => {
+  const HeadingComponent = headingComponents;
+  const SectionComponent = component;
+
   const content = (
     <>
-      <h2 className={styles.section_heading}>{heading}</h2>
-      <p className={styles.section_text}>{text}</p>
-      <div className={styles.section_content}>{children}</div>
-      {(variant === 'left-side-img' || variant === 'right-side-img') && (
-        <img
-          className={classNames(
-            styles.section_image,
-            variant === 'left-side-img'
-              ? styles.section_image__left
-              : styles.section_image__right,
-          )}
-          src={image}
-          alt={alt}
-        ></img>
+      {variant !== SECTION_VARIANTS.WITHOUT_TEXT_LEFT_IMG &&
+        variant !== SECTION_VARIANTS.WITHOUT_TEXT_RIGHT_IMG && (
+          <div
+            className={classNames(
+              styles.section_contentWrapper,
+              variant === SECTION_VARIANTS.WITHOUT_IMG &&
+                styles.section_contentWrapper__onlyText,
+            )}
+          >
+            <HeadingComponent
+              className={classNames(
+                styles.section_heading,
+                component === SECTION_COMPONENTS.HEADER &&
+                  styles.section_heading__hero,
+              )}
+            >
+              {heading}
+            </HeadingComponent>
+
+            <p className={styles.section_text}>{text}</p>
+
+            <div className={styles.section_content}>{children}</div>
+          </div>
+        )}
+      {(variant === SECTION_VARIANTS.LEFT_SIDE_IMG ||
+        variant === SECTION_VARIANTS.RIGHT_SIDE_IMG ||
+        variant === SECTION_VARIANTS.WITHOUT_TEXT_LEFT_IMG ||
+        variant === SECTION_VARIANTS.WITHOUT_TEXT_RIGHT_IMG) && (
+        <>
+          <div
+            className={classNames(
+              styles.section_imageWrapper,
+              variant === SECTION_VARIANTS.LEFT_SIDE_IMG ||
+                variant === SECTION_VARIANTS.WITHOUT_TEXT_LEFT_IMG
+                ? styles.section_imageWrapper__left
+                : styles.section_imageWrapper__right,
+            )}
+          >
+            <img
+              className={classNames(styles.section_image)}
+              src={image}
+              alt={alt}
+            />
+          </div>
+
+          <div
+            className={classNames(
+              styles.section_placeHolder,
+              (variant === SECTION_VARIANTS.LEFT_SIDE_IMG ||
+                variant === SECTION_VARIANTS.WITHOUT_TEXT_LEFT_IMG) &&
+                styles.section_placeHolder__leftSide,
+            )}
+          ></div>
+        </>
       )}
     </>
   );
 
-  return component === 'section' ? (
-    <section className={styles.section}>{content}</section>
-  ) : (
-    <header className={styles.section}>{content}</header>
+  return (
+    <SectionComponent
+      id={id ?? id}
+      className={classNames(
+        styles.section,
+        variant === SECTION_VARIANTS.WITHOUT_IMG && styles.section__onlyText,
+      )}
+    >
+      <div className={styles.section_fitWrapper}>{content}</div>
+    </SectionComponent>
   );
 };
 

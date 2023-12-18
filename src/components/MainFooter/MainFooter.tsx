@@ -11,7 +11,7 @@ const MainFooter: React.FC = () => {
         <a href="/" className={styles.footer_link}>
           <img
             className={styles.footer_logo}
-            src="/src/assets/logo-bookmark-footer.svg"
+            src="/logo-bookmark-footer.svg"
             alt="Bookmark - logo"
           />
         </a>
@@ -35,7 +35,7 @@ const MainFooter: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/src/assets/icon-facebook.svg" alt="facebook icon" />
+            <img src="/icon-facebook.svg" alt="facebook icon" />
           </a>
 
           <a
@@ -46,7 +46,7 @@ const MainFooter: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/src/assets/icon-twitter.svg" alt="twitter icon" />
+            <img src="/icon-twitter.svg" alt="twitter icon" />
           </a>
         </div>
       </div>
