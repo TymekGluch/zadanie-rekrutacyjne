@@ -1,0 +1,107 @@
+@import '/src/styles/index';
+
+$card-item-height: pxToRem(380);
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+
+    &_list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: $primary-vertical-space;
+        width: 100%;
+        max-width: pxToRem(910);
+        padding: $primary-vertical-space 0;
+        margin: 0 $primary-horizontal-space;
+
+        @include md {
+            flex-direction: row;
+        }
+
+        @include lg {
+            width: pxToRem(1000);
+        }
+    }
+
+    &_item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: pxToRem(320);
+
+        &__topPosition {
+            align-items: start;
+        }
+
+        &__bottomPosition {
+            align-items: end;
+        }
+
+        @include md {
+            max-width: pxToRem(280);
+        }
+
+        @include rwd(970px) {
+            height: $card-item-height + pxToRem(120);
+        }
+    }
+
+    &_itemContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: $primary-vertical-space;
+        width: 100%;
+        height: $card-item-height;
+        padding: $primary-vertical-space 0;
+        background: $primary-background;
+        border-radius: pxToRem(16);
+        box-shadow: 0px 6px 10px 0px $hover;
+    }
+
+    &_textWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: $primary-vertical-space / 2;
+    }
+
+    &_heading {
+        font-size: pxToRem(18);
+    }
+
+    &_text {
+        font-size: pxToRem(16);
+    }
+
+    &_anchorWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        gap: $primary-vertical-space / 2;
+        width: 100%;
+    }
+
+    &_dots {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    &_anchor {
+        padding: pxToRem(12) $primary-vertical-space;
+        background: $secondary-background;
+        color: $primary-background;
+        white-space: nowrap;
+        text-transform: capitalize;
+    }
+} 
