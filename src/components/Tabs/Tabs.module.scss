@@ -1,0 +1,101 @@
+@import '/src/styles/index';
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $primary-vertical-space * 1.5;
+    margin-top: $primary-vertical-space;
+
+    &_list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        width: 100%;
+        max-width: pxToRem(550);
+        padding: 0 $primary-horizontal-space;
+
+        @include md {
+            flex-direction: row;
+            border-bottom: solid pxToRem(1) $secondary-text;
+            max-width: max-content;
+            padding: 0;
+        }
+    }
+
+    &_listItem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-bottom: solid pxToRem(1) $secondary-text;
+
+        &:first-of-type {
+            border-top: solid pxToRem(1) $secondary-text;
+
+            @include md {
+                border: none;
+            }
+
+        }
+
+        @include md {
+            min-width: pxToRem(230);
+            width: pxToRem(250);
+            border: none;
+        }
+    }
+
+    &_button {
+        position: relative;
+        width: fit-content;
+        padding: pxToRem(18) 0;
+        background: $primary-background;
+        color: $secondary-text;
+        font-size: pxToRem(20);
+        white-space: nowrap;
+        text-transform: capitalize;
+        border: none !important;
+        border-radius: 0;
+
+        &:hover {
+            color: $accent-item;
+        }
+
+        &:focus,
+        &__active {
+            color: $primary-text;
+            outline: none;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                display: block;
+                width: 90%;
+                height: pxToRem(3);
+                background: $accent-item;
+                transform: translate(-50%, pxToRem(1));
+
+                @include md {
+                    width: 100%;
+                }
+            }
+        }
+
+        @include md {
+            width: 100%;
+            padding: $primary-vertical-space / 2 $primary-horizontal-space;
+        }
+    }
+}
+
+.tabItem {
+    &__disabled {
+        display: none;
+    }
+}
