@@ -12,7 +12,7 @@ $lg-image-height: $image-section-height * 1.4;
     justify-content:  center;
     align-items: center;
     gap: $primary-horizontal-space;
-    width: 100dvw;
+    width: 100vw;
     min-height: $image-section-height;
 
     @include lg {
@@ -25,7 +25,7 @@ $lg-image-height: $image-section-height * 1.4;
         justify-content:  center;
         align-items: center;
         gap: $primary-horizontal-space;
-        width: 100dvw;
+        width: 100vw;
         padding: 0 $primary-horizontal-space;
         background-color: transparent;
 
@@ -160,7 +160,7 @@ $lg-image-height: $image-section-height * 1.4;
 
                 @include md {
                     left: pxToRem(100);
-                    width: 100dvw;
+                    width: 100vw;
                     transform: translate(calc(-100% + $image-width * 2 / 3), $image-section-height * 1 / 3);
                 }
 
@@ -169,7 +169,7 @@ $lg-image-height: $image-section-height * 1.4;
                 }
 
                 @include rwd(1800px) {
-                    left: 15dvw;
+                    left: 15vw;
                 }
             }
 
@@ -181,7 +181,7 @@ $lg-image-height: $image-section-height * 1.4;
                 }
 
                 @include rwd(1800px) {
-                    left: 15dvw;
+                    left: 15vw;
                 }
             }
 
@@ -201,7 +201,7 @@ $lg-image-height: $image-section-height * 1.4;
 
                 @include md {
                     right: pxToRem(70);
-                    width: 100dvw;
+                    width: 100vw;
                     transform: translate(calc(100% - $image-width * 2 / 3), $image-section-height * 1 / 3);
                 }
 
@@ -210,7 +210,7 @@ $lg-image-height: $image-section-height * 1.4;
                 }
 
                 @include rwd(1800px) {
-                    right: 15dvw;
+                    right: 15vw;
                 }
             }
 
@@ -222,7 +222,7 @@ $lg-image-height: $image-section-height * 1.4;
                 }
 
                 @include rwd(1800px) {
-                    right: 15dvw;
+                    right: 15vw;
                 }
             }
 
@@ -264,7 +264,7 @@ $lg-image-height: $image-section-height * 1.4;
             justify-content: center;
             align-items: center;
             align-self: center;
-            width: 100dvw;
+            width: 100vw;
         }
     }
 }
