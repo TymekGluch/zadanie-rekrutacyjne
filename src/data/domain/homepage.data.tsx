@@ -4,6 +4,7 @@ import {
   SECTION_VARIANTS,
   HEADING_COMPONENTS,
 } from '../../components/Section/Section.costants';
+import { CardsItemType } from '../../components/Cards/Cards.types';
 
 type ValueOf<T> = T[keyof T];
 
@@ -54,4 +55,33 @@ const tabItems = (): TabItemType[] =>
     },
   ] as const;
 
-export { tabItems };
+const cardsHomeItems: CardsItemType[] = [
+  {
+    href: '/',
+    linkText: 'Add & install extension',
+    image: '/logo-chrome.svg',
+    alt: 'Chrome logo',
+    heading: 'Add to Chrome',
+    text: 'Minimum version 62',
+  },
+
+  {
+    href: '/',
+    linkText: 'Add & install extension',
+    image: '/logo-firefox.svg',
+    alt: 'Firefox logo',
+    heading: 'Add to Firefox',
+    text: 'Minimum version 55',
+  },
+
+  {
+    href: '/',
+    linkText: 'Add & install extension',
+    image: '/logo-opera.svg',
+    alt: 'Opera logo',
+    heading: 'Add to Opera',
+    text: 'Minimum version 46',
+  },
+];
+
+export { tabItems, cardsHomeItems };

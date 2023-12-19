@@ -10,6 +10,7 @@ import {
 } from './components/Section/Section.costants';
 import { TabItem, Tabs } from './components/Tabs';
 import { tabItems } from './data/domain/homepage.data';
+import { Cards } from './components/Cards';
 
 function App() {
   return (
@@ -75,6 +76,18 @@ function App() {
               ),
             )}
           </Tabs>
+        </Section>
+
+        <Section
+          id="download-the-extension"
+          component={SECTION_COMPONENTS.SECTION}
+          headingComponents={HEADING_COMPONENTS.H2}
+          heading="Download the extension"
+          text="We've got more browsers in the pipeline. Please do let us know if
+          you've got a favourite you'd like us to prioritize."
+          variant={SECTION_VARIANTS.WITHOUT_IMG}
+        >
+          <Cards />
         </Section>
       </div>
 
