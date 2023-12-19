@@ -30,14 +30,12 @@ const MainNavigation: React.FC = () => {
 
   useOutsideClick(handleOutsideClick, menuListRef);
 
-  console.log(styles, styles.mainNavigation);
-
   return (
-    <header className={styles.mainNavigation}>
+    <nav className={styles.mainNavigation}>
       <a href="/" className={styles.mainNavigation_link}>
         <img
           className={styles.mainNavigation_logo}
-          src="/src/assets/logo-bookmark.svg"
+          src="/logo-bookmark.svg"
           alt="Bookmark - logo"
         />
       </a>
@@ -48,7 +46,7 @@ const MainNavigation: React.FC = () => {
         })}
         onClick={handleClick}
       >
-        <img src="/src/assets/icon-hamburger.svg" alt="open menu" />
+        <img src="/icon-hamburger.svg" alt="open menu" />
       </button>
 
       <div
@@ -60,7 +58,7 @@ const MainNavigation: React.FC = () => {
           <a href="/" className={styles.menu_link}>
             <img
               className={styles.menu_logo}
-              src="/src/assets/logo-bookmark-white.svg"
+              src="/logo-bookmark-white.svg"
               alt="Bookmark - logo"
             />
           </a>
@@ -69,11 +67,11 @@ const MainNavigation: React.FC = () => {
             className={styles.menu_closeButton}
             onClick={handleCloseButtonClick}
           >
-            <img src="/src/assets/icon-close.svg" alt="close menu" />
+            <img src="/icon-close.svg" alt="close menu" />
           </button>
         </header>
 
-        <ol ref={menuListRef} className={styles.menu_list}>
+        <ul ref={menuListRef} className={styles.menu_list}>
           {listOfNavigationLink.map(({ name, link }) => (
             <li key={name} className={styles.menu_listItem}>
               <a href={link} className={styles.menu_itemLink}>
@@ -81,7 +79,7 @@ const MainNavigation: React.FC = () => {
               </a>
             </li>
           ))}
-        </ol>
+        </ul>
 
         <button className={styles.menu_loginButton}>Login</button>
 
@@ -94,7 +92,7 @@ const MainNavigation: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/src/assets/icon-facebook.svg" alt="facebook icon" />
+            <img src="/icon-facebook.svg" alt="facebook icon" />
           </a>
 
           <a
@@ -105,11 +103,11 @@ const MainNavigation: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/src/assets/icon-twitter.svg" alt="twitter icon" />
+            <img src="/icon-twitter.svg" alt="twitter icon" />
           </a>
         </div>
       </div>
-    </header>
+    </nav>
   );
 };
 

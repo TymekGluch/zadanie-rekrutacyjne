@@ -1,9 +1,5 @@
 @import '/src/styles/index';
 
-.overflowHidden {
-  overflow: hidden;
-}
-
 .mainArticle {
   position: relative;
   display: flex;
@@ -18,9 +14,12 @@
   &_contentWrapper {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    gap: $primary-vertical-space * 3;
     width: 100%;
+    padding-top: $primary-vertical-space * 2;
+    padding-bottom: $primary-vertical-space * 2;
     min-height: calc(100dvh - pxToRem(83) - pxToRem(145));
   }
 

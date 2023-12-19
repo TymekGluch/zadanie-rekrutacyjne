@@ -1,7 +1,7 @@
 const listOfNavigationLink = [
   {
     name: 'Features',
-    link: '@',
+    link: '#features',
   },
 
   {
