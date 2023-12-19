@@ -33,6 +33,10 @@ body {
   overflow: hidden;
 }
 
+.tabItem__disabled {
+  display: none;
+}
+
 // @media (prefers-reduced-motion: no-preference) {
 //   *,
 //   *::after,
