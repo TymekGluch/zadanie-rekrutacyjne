@@ -65,7 +65,12 @@
             color: $accent-item;
         }
 
-        &:focus,
+        &:focus {
+            color: $primary-text;
+            outline: none;
+
+        }
+
         &__active {
             color: $primary-text;
             outline: none;

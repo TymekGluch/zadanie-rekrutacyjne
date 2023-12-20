@@ -9,8 +9,12 @@ import {
   SECTION_VARIANTS,
 } from './components/Section/Section.costants';
 import { TabItem, Tabs } from './components/Tabs';
-import { tabItems } from './data/domain/homepage.data';
+import {
+  accordionHomepageContent,
+  tabItems,
+} from './data/domain/homepage.data';
 import { Cards } from './components/Cards';
+import { Accordion } from './components/Accordion';
 
 function App() {
   return (
@@ -88,6 +92,18 @@ function App() {
           variant={SECTION_VARIANTS.WITHOUT_IMG}
         >
           <Cards />
+        </Section>
+
+        <Section
+          id="frequently-asked-questions"
+          component={SECTION_COMPONENTS.SECTION}
+          headingComponents={HEADING_COMPONENTS.H2}
+          heading="Frequently asked questions"
+          text="Here are some of our FAQS. If you have any other questions
+          you'd like answered please feel free to email us."
+          variant={SECTION_VARIANTS.WITHOUT_IMG}
+        >
+          <Accordion accordionContent={accordionHomepageContent} />
         </Section>
       </div>
 
