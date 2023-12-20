@@ -47,7 +47,9 @@ const tabItems = (): TabItemType[] =>
             variant={LINK_VARIANTS.CONTAINED}
             deviceDisplay={LINK_DEVICE_DISPLAY.DESKTOP}
             width={LINK_WIDTH.FIT_CONTENT}
-            href="/"
+            href="https://chromewebstore.google.com/detail/boczna-lista-zak%C5%82adek/jdbnofccmhefkmjbkkdkfiicjkgofkdh"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             More info
           </Link>
@@ -71,7 +73,9 @@ const tabItems = (): TabItemType[] =>
             variant={LINK_VARIANTS.CONTAINED}
             deviceDisplay={LINK_DEVICE_DISPLAY.DESKTOP}
             width={LINK_WIDTH.FIT_CONTENT}
-            href="/"
+            href="https://chromewebstore.google.com/detail/boczna-lista-zak%C5%82adek/jdbnofccmhefkmjbkkdkfiicjkgofkdh"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             More info
           </Link>
@@ -95,7 +99,9 @@ const tabItems = (): TabItemType[] =>
             variant={LINK_VARIANTS.CONTAINED}
             deviceDisplay={LINK_DEVICE_DISPLAY.DESKTOP}
             width={LINK_WIDTH.FIT_CONTENT}
-            href="/"
+            href="https://chromewebstore.google.com/detail/boczna-lista-zak%C5%82adek/jdbnofccmhefkmjbkkdkfiicjkgofkdh"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             More info
           </Link>

@@ -129,7 +129,11 @@ function App() {
           you'd like answered please feel free to email us."
           variant={SECTION_VARIANTS.WITHOUT_IMG}
         >
-          <Accordion accordionContent={accordionHomepageContent} />
+          <Accordion
+            accordionContent={accordionHomepageContent}
+            link="https://chromewebstore.google.com/detail/boczna-lista-zak%C5%82adek/jdbnofccmhefkmjbkkdkfiicjkgofkdh"
+            linkText="More info"
+          />
         </Section>
       </div>
 
