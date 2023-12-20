@@ -129,49 +129,6 @@
         }
     }
 
-    &_itemLink {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: $primary-background;
-        font-size: pxToRem(20);
-        font-weight: 300;
-        text-transform: uppercase;
-        letter-spacing: pxToRem(2);
-        padding: pxToRem(16) 0;
-
-        @include lg {
-            color: $accent-text;
-            font-size: pxToRem(16);
-            font-weight: 400;
-
-            &:hover,
-            &:focus {
-                color: $accent-item;
-            }
-        }
-    }
-
-    &_loginButton {
-        width: 100%;
-        height: fit-content;
-        margin-top: pxToRem(24);
-        color: $accent-text;
-        font-size: pxToRem(20);
-        font-weight: 300;
-        letter-spacing: pxToRem(2);
-        text-transform: uppercase;
-        
-        @include lg {
-            width: fit-content;
-            padding: pxToRem(12) pxToRem(30);
-            margin: 0;
-            background: $accent-item;
-            font-size: pxToRem(16);
-            font-weight: 400;
-        }
-    }
-
     &_closeButton {
         display: flex;
         justify-content: center;

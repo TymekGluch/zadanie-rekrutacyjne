@@ -15,6 +15,12 @@ import {
 } from './data/domain/homepage.data';
 import { Cards } from './components/Cards';
 import { Accordion } from './components/Accordion';
+import { Link } from './components/Link';
+import {
+  LINK_COMPONENT,
+  LINK_VARIANTS,
+  LINK_WIDTH,
+} from './components/Link/Link.constants';
 
 function App() {
   return (
@@ -30,7 +36,25 @@ function App() {
           variant={SECTION_VARIANTS.RIGHT_SIDE_IMG}
           image="/illustration-hero.svg"
           alt="hero image"
-        ></Section>
+        >
+          <Link
+            component={LINK_COMPONENT.A}
+            variant={LINK_VARIANTS.CONTAINED}
+            width={LINK_WIDTH.FIT_CONTENT}
+            href="#add-to-chrome"
+          >
+            Get it on Chrome
+          </Link>
+
+          <Link
+            component={LINK_COMPONENT.A}
+            variant={LINK_VARIANTS.CONTAINED_LIGHT}
+            width={LINK_WIDTH.FIT_CONTENT}
+            href="#add-to-firefox"
+          >
+            Get it on Firefox
+          </Link>
+        </Section>
 
         <Section
           id="features"

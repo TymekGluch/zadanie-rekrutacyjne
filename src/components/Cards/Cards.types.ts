@@ -1,4 +1,5 @@
 export type CardsItemType = {
+    id?: string;
     href: string;
     linkText: string;
     image: string;
