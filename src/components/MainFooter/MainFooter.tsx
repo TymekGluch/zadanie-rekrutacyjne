@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './MainFooter.module.scss';
 import { footersNavigationItem } from './MainFooter.data';
+import { Link } from '../Link';
+import { LINK_COMPONENT, LINK_VARIANTS } from '../Link/Link.constants';
 
 const MainFooter: React.FC = () => {
   return (
@@ -19,35 +21,39 @@ const MainFooter: React.FC = () => {
         <ul className={styles.footer_list}>
           {footersNavigationItem.map(({ name, link }) => (
             <li key={name} className={styles.footer_listItem}>
-              <a href={link} className={styles.footer_itemLink}>
+              <Link
+                component={LINK_COMPONENT.A}
+                variant={LINK_VARIANTS.DARK_BACKGROUND_DEFAULT}
+                href={link}
+              >
                 {name}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
 
         <div className={styles.footer_socials}>
-          <a
-            className={styles.footer_socialLink}
-            href=""
-            aria-label="facebook"
-            title="facebook"
+          <Link
+            component={LINK_COMPONENT.A}
+            variant={LINK_VARIANTS.ICON}
+            href="https://www.facebook.com/"
+            ariaLabel="facebook"
+            icon="/icon-facebook.svg"
+            accentIcon="/icon-facebook-accent.svg"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <img src="/icon-facebook.svg" alt="facebook icon" />
-          </a>
+          ></Link>
 
-          <a
-            className={styles.footer_socialLink}
+          <Link
+            component={LINK_COMPONENT.A}
+            variant={LINK_VARIANTS.ICON}
             href="https://twitter.com/"
-            aria-label="twitter"
-            title="twitter"
+            ariaLabel="twitter"
+            icon="/icon-twitter.svg"
+            accentIcon="/icon-twitter-accent.svg"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <img src="/icon-twitter.svg" alt="twitter icon" />
-          </a>
+          ></Link>
         </div>
       </div>
     </footer>

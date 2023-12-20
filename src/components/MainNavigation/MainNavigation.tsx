@@ -3,6 +3,13 @@ import styles from './MainNavigation.module.scss';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { listOfNavigationLink } from './MainNavigation.data';
 import classNames from 'classnames';
+import { Link } from '../Link';
+import {
+  LINK_COMPONENT,
+  LINK_DEVICE_DISPLAY,
+  LINK_VARIANTS,
+  LINK_WIDTH,
+} from '../Link/Link.constants';
 
 const MainNavigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
@@ -74,37 +81,80 @@ const MainNavigation: React.FC = () => {
         <ul ref={menuListRef} className={styles.menu_list}>
           {listOfNavigationLink.map(({ name, link }) => (
             <li key={name} className={styles.menu_listItem}>
-              <a href={link} className={styles.menu_itemLink}>
+              <Link
+                component={LINK_COMPONENT.A}
+                variant={LINK_VARIANTS.DARK_BACKGROUND_DEFAULT}
+                href={link}
+                customStyles={{ fontSize: 20 }}
+                deviceDisplay={LINK_DEVICE_DISPLAY.MOBILE}
+              >
                 {name}
-              </a>
+              </Link>
+
+              <Link
+                component={LINK_COMPONENT.A}
+                variant={LINK_VARIANTS.DEFAULT}
+                href={link}
+                customStyles={{
+                  fontSize: 20,
+                  paddingLeft: 0,
+                  paddingRight: 0,
+                }}
+                deviceDisplay={LINK_DEVICE_DISPLAY.DESKTOP}
+              >
+                {name}
+              </Link>
             </li>
           ))}
         </ul>
 
-        <button className={styles.menu_loginButton}>Login</button>
+        <Link
+          component={LINK_COMPONENT.BUTTON}
+          variant={LINK_VARIANTS.OUTLINED}
+          deviceDisplay={LINK_DEVICE_DISPLAY.MOBILE}
+          customStyles={{ marginTop: '1.5rem', fontSize: '1.25rem' }}
+        >
+          Login
+        </Link>
+
+        <Link
+          component={LINK_COMPONENT.BUTTON}
+          variant={LINK_VARIANTS.CONTAINED_DARK}
+          deviceDisplay={LINK_DEVICE_DISPLAY.DESKTOP}
+          width={LINK_WIDTH.FIT_CONTENT}
+          customStyles={{
+            paddingLeft: '2.188rem',
+            paddingRight: '2.188rem',
+            textTransform: 'uppercase',
+            letterSpacing: '0.125rem',
+            fontWeight: '300',
+          }}
+        >
+          Login
+        </Link>
 
         <div className={styles.menu_socials}>
-          <a
-            className={styles.menu_socialLink}
-            href=""
-            aria-label="facebook"
-            title="facebook"
+          <Link
+            component={LINK_COMPONENT.A}
+            variant={LINK_VARIANTS.ICON}
+            href="https://www.facebook.com/"
+            ariaLabel="facebook"
+            icon="/icon-facebook.svg"
+            accentIcon="/icon-facebook-accent.svg"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <img src="/icon-facebook.svg" alt="facebook icon" />
-          </a>
+          ></Link>
 
-          <a
-            className={styles.menu_socialLink}
+          <Link
+            component={LINK_COMPONENT.A}
+            variant={LINK_VARIANTS.ICON}
             href="https://twitter.com/"
-            aria-label="twitter"
-            title="twitter"
+            ariaLabel="twitter"
+            icon="/icon-twitter.svg"
+            accentIcon="/icon-twitter-accent.svg"
             target="_blank"
             rel="noopener noreferrer"
-          >
-            <img src="/icon-twitter.svg" alt="twitter icon" />
-          </a>
+          ></Link>
         </div>
       </div>
     </nav>

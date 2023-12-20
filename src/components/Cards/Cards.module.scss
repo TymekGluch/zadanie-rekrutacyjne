@@ -35,6 +35,7 @@ $card-item-height: pxToRem(380);
         justify-content: center;
         width: 100%;
         max-width: pxToRem(320);
+        scroll-margin: pxToRem(32);
 
         &__topPosition {
             align-items: start;
@@ -95,13 +96,5 @@ $card-item-height: pxToRem(380);
     &_dots {
         width: 100%;
         object-fit: contain;
-    }
-
-    &_anchor {
-        padding: pxToRem(12) $primary-vertical-space;
-        background: $secondary-background;
-        color: $primary-background;
-        white-space: nowrap;
-        text-transform: capitalize;
     }
 } 

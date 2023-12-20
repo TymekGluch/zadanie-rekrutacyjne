@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './Cards.module.scss';
 import classNames from 'classnames';
 import { cardsHomeItems } from '../../data/domain/homepage.data';
+import { Link } from '../Link';
+import { LINK_COMPONENT, LINK_VARIANTS } from '../Link/Link.constants';
 
 const Cards: React.FC = () => {
   const itemPosition = (identifier: number) => {
@@ -27,8 +29,9 @@ const Cards: React.FC = () => {
     <div className={styles.cards}>
       <ul className={styles.cards_list}>
         {cardsHomeItems.map(
-          ({ href, linkText, image, alt, heading, text }, index) => (
+          ({ href, id, linkText, image, alt, heading, text }, index) => (
             <li
+              id={id}
               key={`${heading}${index}`}
               className={classNames(styles.cards_item, itemPosition(index))}
             >
@@ -48,14 +51,16 @@ const Cards: React.FC = () => {
                     alt=""
                   />
 
-                  <a
+                  <Link
+                    component={LINK_COMPONENT.A}
+                    variant={LINK_VARIANTS.CONTAINED}
                     href={href}
-                    className={styles.cards_anchor}
-                    target={'_blank'}
+                    target="_blank"
                     rel="noopener noreferrer"
+                    customStyles={{ width: '85%' }}
                   >
                     {linkText}
-                  </a>
+                  </Link>
                 </div>
               </section>
             </li>

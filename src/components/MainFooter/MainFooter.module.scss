@@ -8,7 +8,6 @@
     background: $primary-text;
 
     &_formWrapper {
-        min-height: pxToRem(50);
         width: 100%;
         background: $secondary-background;
     }
@@ -54,17 +53,6 @@
         @include lg {
             flex-direction: row;
         }
-    }
-
-    &_itemLink {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: $primary-background;
-        font-size: pxToRem(16);
-        font-weight: 300;
-        text-transform: uppercase;
-        letter-spacing: pxToRem(2);
     }
 
     &_socials {

@@ -1,0 +1,132 @@
+@import '/src/styles/index';
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: transparent;
+    color: $primary-text;
+    padding: pxToRem(12) pxToRem(16);
+    font-size: pxToRem(16);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: pxToRem(2);
+
+    &__darkBackgroundDefault {
+        color: $primary-background;
+    }
+
+    &__fitContent {
+        width: fit-content;
+    }
+
+    &:focus,
+    &:hover {
+        outline: none;
+        border: none;
+        color: $accent-item;
+    }
+
+    &__onlyIcon {
+        padding: 0;
+    }
+
+    &__contained {
+        padding: pxToRem(12) pxToRem(8);
+        background: $secondary-background;
+        color: $primary-background;
+        border: solid pxToRem(2) $secondary-background;
+        border-radius: pxToRem(8);
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: 0;
+        white-space: nowrap;
+
+        &:focus,
+        &:hover {
+            background: $primary-background;
+            color: $secondary-background;
+            border: solid pxToRem(2) $secondary-background;
+        }
+
+        @include md {
+            padding: pxToRem(12) pxToRem(16);
+        }
+    }
+
+    &__containedLight {
+        padding: pxToRem(12) pxToRem(8);
+        background: $light-button;
+        color: $primary-text;
+        border: solid pxToRem(2) $light-button;
+        border-radius: pxToRem(8);
+        box-shadow: createBoxShadow($shadow);
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: 0;
+        white-space: nowrap;
+
+        &:focus,
+        &:hover {
+            color: $primary-text;
+            border: solid pxToRem(2) $secondary-text;
+        }
+
+        @include md {
+            padding: pxToRem(12) pxToRem(16);
+        }
+    }
+
+    &__containedDark {
+        padding: pxToRem(12) pxToRem(8);
+        background: $accent-item;
+        color: $primary-background;
+        border: solid pxToRem(2) $accent-item;
+        border-radius: pxToRem(8);
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: 0;
+        white-space: nowrap;
+
+        &:focus,
+        &:hover {
+            background: $primary-background;
+            color: $accent-item;
+            border: solid pxToRem(2) $accent-item;
+        }
+
+        @include md {
+            padding: pxToRem(12) pxToRem(16);
+        }
+    }
+
+    &__outlined {
+        background: transparent;
+        color: $primary-background;
+        border: solid $primary-background pxToRem(2);
+
+        &:focus,
+        &:hover {
+            background: $accent-item;
+            color: $primary-background;
+            border-color: $accent-item;
+        }
+    }
+
+    &__onlyDesktop {
+        display: none;
+
+        @include lg {
+            display: flex;
+        }
+    }
+
+    &__onlyMobile {
+        display: flex;
+
+        @include lg {
+            display: none;
+        }
+    }
+}

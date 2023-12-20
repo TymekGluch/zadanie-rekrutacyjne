@@ -1,0 +1,16 @@
+@import '/src/styles/index';
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &__justifyStart {
+        justify-content: start;
+    }
+
+    &__justifyEnd {
+        justify-content: end;
+    }
+}

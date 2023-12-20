@@ -302,9 +302,10 @@ $lg-image-height: $image-section-height * 1.4;
 
     &_content {
         display: flex;
-        justify-content: center;
+        justify-content: start;
         align-items: center;
         align-self: center;
+        gap: pxToRem(16);
         width: 100%;
     }
 
@@ -313,7 +314,7 @@ $lg-image-height: $image-section-height * 1.4;
             flex-direction: column;
         }
 
-        & > .section_content {
+        .section_content {
             display: flex;
             justify-content: center;
             align-items: center;
