@@ -4,4 +4,10 @@ const BOX_JUSTIFY_CONTENT = {
     END: 'end',
 } as const;
 
-export { BOX_JUSTIFY_CONTENT, };
+const JUSTIFY_ON_DEVICE = {
+    FULL: 'full',
+    DESKTOP: 'desktop',
+    MOBILE: 'mobile',
+}
+
+export { BOX_JUSTIFY_CONTENT, JUSTIFY_ON_DEVICE, };

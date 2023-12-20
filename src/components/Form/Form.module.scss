@@ -1,0 +1,12 @@
+@import '/src/styles/index';
+
+.form {
+    width: 100%;
+
+    &_counter {
+        display: flex;
+        justify-content: center;
+        color: $primary-background;
+        text-transform: uppercase;
+    }
+}

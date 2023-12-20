@@ -3,11 +3,16 @@ import styles from './MainFooter.module.scss';
 import { footersNavigationItem } from './MainFooter.data';
 import { Link } from '../Link';
 import { LINK_COMPONENT, LINK_VARIANTS } from '../Link/Link.constants';
+import { Form } from '../Form';
+import IconFB from '../../assets/icon-facebook.svg?react';
+import InonX from '../../assets/icon-twitter.svg?react';
 
 const MainFooter: React.FC = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.footer_formWrapper}></div>
+      <div className={styles.footer_formWrapper}>
+        <Form />
+      </div>
 
       <div className={styles.footer_contentWrapper}>
         <a href="/" className={styles.footer_link}>
@@ -37,23 +42,21 @@ const MainFooter: React.FC = () => {
             component={LINK_COMPONENT.A}
             variant={LINK_VARIANTS.ICON}
             href="https://www.facebook.com/"
-            ariaLabel="facebook"
-            icon="/icon-facebook.svg"
-            accentIcon="/icon-facebook-accent.svg"
+            aria-label="facebook"
+            icon={IconFB}
             target="_blank"
             rel="noopener noreferrer"
-          ></Link>
+          />
 
           <Link
             component={LINK_COMPONENT.A}
             variant={LINK_VARIANTS.ICON}
             href="https://twitter.com/"
-            ariaLabel="twitter"
-            icon="/icon-twitter.svg"
-            accentIcon="/icon-twitter-accent.svg"
+            aria-label="twitter"
+            icon={InonX}
             target="_blank"
             rel="noopener noreferrer"
-          ></Link>
+          />
         </div>
       </div>
     </footer>

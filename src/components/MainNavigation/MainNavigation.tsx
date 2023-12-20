@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './MainNavigation.module.scss';
-import { useOutsideClick } from '../../hooks/useOutsideClick';
 import { listOfNavigationLink } from './MainNavigation.data';
 import classNames from 'classnames';
 import { Link } from '../Link';
@@ -10,16 +9,17 @@ import {
   LINK_VARIANTS,
   LINK_WIDTH,
 } from '../Link/Link.constants';
+import IconFB from '../../assets/icon-facebook.svg?react';
+import InonX from '../../assets/icon-twitter.svg?react';
 
 const MainNavigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
-  const menuListRef = React.useRef<HTMLOListElement>(null);
 
   React.useEffect(() => {
     if (isMenuOpen) {
-      document.body.classList.add('overflowHidden');
+      document.documentElement.classList.add('overflowHidden');
     } else {
-      document.body.classList.remove('overflowHidden');
+      document.documentElement.classList.remove('overflowHidden');
     }
   }, [isMenuOpen]);
 
@@ -30,12 +30,6 @@ const MainNavigation: React.FC = () => {
   const handleCloseButtonClick = (): void => {
     setIsMenuOpen(false);
   };
-
-  const handleOutsideClick = (): void => {
-    setIsMenuOpen(false);
-  };
-
-  useOutsideClick(handleOutsideClick, menuListRef);
 
   return (
     <nav className={styles.mainNavigation}>
@@ -52,6 +46,7 @@ const MainNavigation: React.FC = () => {
           [styles.maiNavigation_toggleMenu__turnedOn]: isMenuOpen,
         })}
         onClick={handleClick}
+        type="button"
       >
         <img src="/icon-hamburger.svg" alt="open menu" />
       </button>
@@ -73,12 +68,13 @@ const MainNavigation: React.FC = () => {
           <button
             className={styles.menu_closeButton}
             onClick={handleCloseButtonClick}
+            type="button"
           >
             <img src="/icon-close.svg" alt="close menu" />
           </button>
         </header>
 
-        <ul ref={menuListRef} className={styles.menu_list}>
+        <ul className={styles.menu_list}>
           {listOfNavigationLink.map(({ name, link }) => (
             <li key={name} className={styles.menu_listItem}>
               <Link
@@ -113,6 +109,7 @@ const MainNavigation: React.FC = () => {
           variant={LINK_VARIANTS.OUTLINED}
           deviceDisplay={LINK_DEVICE_DISPLAY.MOBILE}
           customStyles={{ marginTop: '1.5rem', fontSize: '1.25rem' }}
+          type="button"
         >
           Login
         </Link>
@@ -129,6 +126,7 @@ const MainNavigation: React.FC = () => {
             letterSpacing: '0.125rem',
             fontWeight: '300',
           }}
+          type="button"
         >
           Login
         </Link>
@@ -138,23 +136,21 @@ const MainNavigation: React.FC = () => {
             component={LINK_COMPONENT.A}
             variant={LINK_VARIANTS.ICON}
             href="https://www.facebook.com/"
-            ariaLabel="facebook"
-            icon="/icon-facebook.svg"
-            accentIcon="/icon-facebook-accent.svg"
+            aria-label="facebook"
+            icon={IconFB}
             target="_blank"
             rel="noopener noreferrer"
-          ></Link>
+          />
 
           <Link
             component={LINK_COMPONENT.A}
             variant={LINK_VARIANTS.ICON}
             href="https://twitter.com/"
-            ariaLabel="twitter"
-            icon="/icon-twitter.svg"
-            accentIcon="/icon-twitter-accent.svg"
+            aria-label="twitter"
+            icon={InonX}
             target="_blank"
             rel="noopener noreferrer"
-          ></Link>
+          />
         </div>
       </div>
     </nav>

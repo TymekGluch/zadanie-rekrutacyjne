@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: $primary-horizontal-space;
     width: 100%;
 
     &__justifyStart {
@@ -12,5 +13,28 @@
 
     &__justifyEnd {
         justify-content: end;
+    }
+
+    &__onlyMobile.box__justifyStart, 
+    &__onlyMobile.box__justifyEnd {
+        @include md {
+            justify-content: center;
+        }
+    }
+
+    &__onlyDesktop.box__justifyStart {
+        justify-content: center;
+
+        @include md {
+            justify-content: start;
+        }
+    }
+
+    &__onlyDesktop.box__justifyEnd {
+        justify-content: center;
+
+        @include md {
+            justify-content: end;
+        }
     }
 }

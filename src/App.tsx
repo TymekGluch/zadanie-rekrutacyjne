@@ -8,7 +8,7 @@ import {
   SECTION_COMPONENTS,
   SECTION_VARIANTS,
 } from './components/Section/Section.costants';
-import { TabItem, Tabs } from './components/Tabs';
+import { Tabs } from './components/Tabs';
 import {
   accordionHomepageContent,
   tabItems,
@@ -21,6 +21,11 @@ import {
   LINK_VARIANTS,
   LINK_WIDTH,
 } from './components/Link/Link.constants';
+import { Box } from './components/Box';
+import {
+  BOX_JUSTIFY_CONTENT,
+  JUSTIFY_ON_DEVICE,
+} from './components/Box/Box.constants';
 
 function App() {
   return (
@@ -37,23 +42,28 @@ function App() {
           image="/illustration-hero.svg"
           alt="hero image"
         >
-          <Link
-            component={LINK_COMPONENT.A}
-            variant={LINK_VARIANTS.CONTAINED}
-            width={LINK_WIDTH.FIT_CONTENT}
-            href="#add-to-chrome"
+          <Box
+            justifyContent={BOX_JUSTIFY_CONTENT.START}
+            justifyOnDevice={JUSTIFY_ON_DEVICE.DESKTOP}
           >
-            Get it on Chrome
-          </Link>
+            <Link
+              component={LINK_COMPONENT.A}
+              variant={LINK_VARIANTS.CONTAINED}
+              width={LINK_WIDTH.FIT_CONTENT}
+              href="#add-to-chrome"
+            >
+              Get it on Chrome
+            </Link>
 
-          <Link
-            component={LINK_COMPONENT.A}
-            variant={LINK_VARIANTS.CONTAINED_LIGHT}
-            width={LINK_WIDTH.FIT_CONTENT}
-            href="#add-to-firefox"
-          >
-            Get it on Firefox
-          </Link>
+            <Link
+              component={LINK_COMPONENT.A}
+              variant={LINK_VARIANTS.CONTAINED_LIGHT}
+              width={LINK_WIDTH.FIT_CONTENT}
+              href="#add-to-firefox"
+            >
+              Get it on Firefox
+            </Link>
+          </Box>
         </Section>
 
         <Section
@@ -72,7 +82,7 @@ function App() {
               'Speedy searching',
               'Easy sharing',
             ]}
-            controledIds={['#tab1', '#tab2', '#tab3']}
+            controledIds={['tab1', 'tab2', 'tab3']}
           >
             {tabItems().map(
               (
@@ -89,7 +99,7 @@ function App() {
                 },
                 index,
               ) => (
-                <TabItem key={`${heading}${index}`} id={`tab${index + 1}`}>
+                <Tabs.Item key={`${heading}${index}`} id={`tab${index + 1}`}>
                   <Section
                     component={sectionComponent}
                     headingComponents={hedingComponent}
@@ -102,7 +112,7 @@ function App() {
                   >
                     {children}
                   </Section>
-                </TabItem>
+                </Tabs.Item>
               ),
             )}
           </Tabs>
