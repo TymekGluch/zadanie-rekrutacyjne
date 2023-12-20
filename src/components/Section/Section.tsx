@@ -19,6 +19,7 @@ type InternalProps = {
   text?: string;
   component: Components;
   headingComponents?: HedingComponents;
+  zoomAndCropImage?: number;
 };
 
 type Props = (
@@ -43,6 +44,7 @@ const Section: React.FC<SectionProps> = ({
   variant,
   image,
   alt,
+  zoomAndCropImage = 1,
 }) => {
   const HeadingComponent = headingComponents;
   const SectionComponent = component;
@@ -91,6 +93,7 @@ const Section: React.FC<SectionProps> = ({
               className={classNames(styles.section_image)}
               src={image}
               alt={alt}
+              style={{ transform: `scale(${zoomAndCropImage})` }}
             />
           </div>
 

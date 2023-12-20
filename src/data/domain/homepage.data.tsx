@@ -18,6 +18,7 @@ type TabItemType = {
   image: string;
   alt: string;
   children?: React.ReactNode;
+  zoomAndCropImage?: number;
 };
 
 const tabItems = (): TabItemType[] =>
@@ -31,6 +32,7 @@ const tabItems = (): TabItemType[] =>
       image: '/illustration-features-tab-1.svg',
       alt: 'Bookmark in one click - image',
       children: null,
+      zoomAndCropImage: 0.9,
     },
 
     {
@@ -42,6 +44,7 @@ const tabItems = (): TabItemType[] =>
       image: '/illustration-features-tab-2.svg',
       alt: 'tab 2',
       children: null,
+      zoomAndCropImage: 0.9,
     },
 
     {
@@ -53,12 +56,13 @@ const tabItems = (): TabItemType[] =>
       image: '/illustration-features-tab-3.svg',
       alt: 'tab 3',
       children: null,
+      zoomAndCropImage: 0.9,
     },
   ] as const;
 
 const cardsHomeItems: CardsItemType[] = [
   {
-    href: '/',
+    href: 'https://chromewebstore.google.com/detail/boczna-lista-zak%C5%82adek/jdbnofccmhefkmjbkkdkfiicjkgofkdh',
     linkText: 'Add & install extension',
     image: '/logo-chrome.svg',
     alt: 'Chrome logo',
@@ -67,7 +71,7 @@ const cardsHomeItems: CardsItemType[] = [
   },
 
   {
-    href: '/',
+    href: 'https://addons.mozilla.org/en-US/firefox/extensions/category/bookmarks/',
     linkText: 'Add & install extension',
     image: '/logo-firefox.svg',
     alt: 'Firefox logo',
@@ -76,7 +80,7 @@ const cardsHomeItems: CardsItemType[] = [
   },
 
   {
-    href: '/',
+    href: 'https://addons.opera.com/en/extensions/details/bookmarks-manager-and-viewer/',
     linkText: 'Add & install extension',
     image: '/logo-opera.svg',
     alt: 'Opera logo',
