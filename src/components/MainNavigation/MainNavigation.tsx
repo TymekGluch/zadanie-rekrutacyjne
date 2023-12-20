@@ -83,6 +83,7 @@ const MainNavigation: React.FC = () => {
                 href={link}
                 customStyles={{ fontSize: 20 }}
                 deviceDisplay={LINK_DEVICE_DISPLAY.MOBILE}
+                onClick={(): void => setIsMenuOpen(false)}
               >
                 {name}
               </Link>
