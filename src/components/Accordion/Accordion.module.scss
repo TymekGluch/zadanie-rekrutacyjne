@@ -2,8 +2,10 @@
 
 .accordion {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: $primary-vertical-space;
     width: 100%;
     padding-top: $primary-vertical-space;
 

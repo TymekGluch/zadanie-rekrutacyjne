@@ -2,6 +2,12 @@ import React from 'react';
 import styles from './Accordion.module.scss';
 import classNames from 'classnames';
 import { useOutsideClick } from '../../hooks/useOutsideClick';
+import { Link } from '../Link';
+import {
+  LINK_COMPONENT,
+  LINK_VARIANTS,
+  LINK_WIDTH,
+} from '../Link/Link.constants';
 
 export type AccordionItemType = {
   panelHeading: string;
@@ -11,9 +17,15 @@ export type AccordionItemType = {
 
 type AccordionProps = {
   accordionContent: AccordionItemType[];
+  linkText?: string;
+  link?: string;
 };
 
-const Accordion: React.FC<AccordionProps> = ({ accordionContent }) => {
+const Accordion: React.FC<AccordionProps> = ({
+  accordionContent,
+  link = undefined,
+  linkText = undefined,
+}) => {
   const arrayOfAccordionState = Array.from(
     { length: accordionContent.length },
     () => false,
@@ -65,6 +77,19 @@ const Accordion: React.FC<AccordionProps> = ({ accordionContent }) => {
           </li>
         ))}
       </ul>
+
+      {link && linkText && (
+        <Link
+          component={LINK_COMPONENT.A}
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          variant={LINK_VARIANTS.CONTAINED}
+          width={LINK_WIDTH.FIT_CONTENT}
+        >
+          {linkText}
+        </Link>
+      )}
     </div>
   );
 };
