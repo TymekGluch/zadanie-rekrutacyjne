@@ -15,6 +15,7 @@
 
     &__darkBackgroundDefault {
         color: $primary-background;
+        fill: $primary-background;
     }
 
     &__fitContent {
@@ -26,9 +27,11 @@
         outline: none;
         border: none;
         color: $accent-item;
+        fill: $accent-item;
     }
 
     &__onlyIcon {
+        fill: $primary-background;
         padding: 0;
     }
 
@@ -47,6 +50,7 @@
         &:hover {
             background: $primary-background;
             color: $secondary-background;
+            fill: $secondary-background;
             border: solid pxToRem(2) $secondary-background;
         }
 
@@ -70,6 +74,7 @@
         &:focus,
         &:hover {
             color: $primary-text;
+            fill: $primary-text;
             border: solid pxToRem(2) $secondary-text;
         }
 
@@ -93,6 +98,7 @@
         &:hover {
             background: $primary-background;
             color: $accent-item;
+            fill: $accent-item;
             border: solid pxToRem(2) $accent-item;
         }
 
@@ -110,6 +116,7 @@
         &:hover {
             background: $accent-item;
             color: $primary-background;
+            fill: $primary-background;
             border-color: $accent-item;
         }
     }

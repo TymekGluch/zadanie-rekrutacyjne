@@ -123,7 +123,7 @@ const Section: React.FC<SectionProps> = ({
                 variant === SECTION_VARIANTS.WITHOUT_TEXT_LEFT_IMG) &&
                 styles.section_placeHolder__leftSide,
             )}
-          ></div>
+          />
         </>
       )}
     </>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Link.module.scss';
 import {
   LINK_COMPONENT,
@@ -9,41 +9,57 @@ import {
 import { ValueOf } from '../../types';
 import classNames from 'classnames';
 
-type LinkProps = React.PropsWithChildren<{
-  component: ValueOf<typeof LINK_COMPONENT>;
+type IconSVGType = React.FunctionComponent<
+  React.SVGProps<SVGSVGElement> & {
+    title?: string | undefined;
+  }
+>;
+
+type LinkInternalProps = {
   variant?: ValueOf<typeof LINK_VARIANTS>;
-  onClick?: () => void;
-  href?: string;
-  target?: string;
-  rel?: string;
   width?: ValueOf<typeof LINK_WIDTH>;
-  icon?: string;
-  accentIcon?: string;
-  ariaLabel?: string;
   deviceDisplay?: ValueOf<typeof LINK_DEVICE_DISPLAY>;
   customStyles?: React.CSSProperties;
-}>;
+  icon?: IconSVGType;
+};
+
+type LinkOmittedProps = keyof LinkInternalProps | 'style';
+
+type LinkAsAnchorComponentProp = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+type LinkAsButtonComponentProp = React.ButtonHTMLAttributes<HTMLButtonElement>;
+
+type LinkPolymorphicType = {
+  [LINK_COMPONENT.A]: { component: typeof LINK_COMPONENT.A } & Omit<
+    LinkAsAnchorComponentProp,
+    LinkOmittedProps
+  > &
+    LinkInternalProps;
+  [LINK_COMPONENT.BUTTON]: { component: typeof LINK_COMPONENT.BUTTON } & Omit<
+    LinkAsButtonComponentProp,
+    LinkOmittedProps
+  > &
+    LinkInternalProps;
+};
+
+type LinkProps =
+  | LinkPolymorphicType[typeof LINK_COMPONENT.A]
+  | LinkPolymorphicType[typeof LINK_COMPONENT.BUTTON];
 
 const Link: React.FC<LinkProps> = ({
   component,
   variant = 'default',
-  onClick,
-  href,
-  target,
-  rel,
   width = LINK_WIDTH.FULL,
   icon,
-  accentIcon,
-  ariaLabel = '',
   deviceDisplay = 'all',
   customStyles,
   children,
+  ...restProps
 }) => {
-  const Component = component;
-  const componentsProps =
-    component === LINK_COMPONENT.A ? { href, target, rel } : { onClick };
-
-  const [isIconLinkActive, setIsIconLinkActive] = useState<boolean>(false);
+  const Component = component as unknown as React.ComponentType<
+    React.ComponentPropsWithoutRef<typeof component>
+  >;
+  const componentProps = restProps as React.ComponentProps<typeof Component>;
+  const IconComponent = icon;
 
   const getVariantClass = (linkVarint: ValueOf<typeof LINK_VARIANTS>) => {
     switch (linkVarint) {
@@ -74,23 +90,11 @@ const Link: React.FC<LinkProps> = ({
           styles.link__onlyDesktop,
         deviceDisplay === LINK_DEVICE_DISPLAY.MOBILE && styles.link__onlyMobile,
       )}
-      onFocus={() => setIsIconLinkActive(true)}
-      onBlur={() => setIsIconLinkActive(false)}
-      onMouseOver={() => setIsIconLinkActive(true)}
-      onMouseLeave={() => setIsIconLinkActive(false)}
-      title={variant === LINK_VARIANTS.ICON ? ariaLabel : ''}
-      aria-label={ariaLabel}
-      {...componentsProps}
       style={customStyles}
+      {...componentProps}
     >
-      {variant === LINK_VARIANTS.ICON ? (
-        <>
-          {isIconLinkActive ? (
-            <img className={styles.link_Icon} src={accentIcon} alt="" />
-          ) : (
-            <img className={styles.link_icon} src={icon} alt="" />
-          )}
-        </>
+      {variant === LINK_VARIANTS.ICON && IconComponent ? (
+        <IconComponent />
       ) : (
         children
       )}

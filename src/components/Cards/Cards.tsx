@@ -15,14 +15,16 @@ const Cards: React.FC = () => {
       return idNumber === 2 || (idNumber - 2) % 3 === 0;
     };
 
-    switch (true) {
-      case isTopPositionCondition(identifier):
-        return styles.cards_item__topPosition;
-      case isBottomPositionCondition(identifier):
-        return styles.cards_item__bottomPosition;
-      default:
-        return '';
+    if (
+      !isTopPositionCondition(identifier) &&
+      !isBottomPositionCondition(identifier)
+    ) {
+      return '';
     }
+
+    return isTopPositionCondition(identifier)
+      ? styles.cards_item__topPosition
+      : styles.cards_item__bottomPosition;
   };
 
   return (
