@@ -175,6 +175,22 @@ $lg-image-height: $image-section-height * 1.4;
                     right: auto;
                     left: pxToRem(70);
                     transform: none;
+
+                    &__7 {
+                        transform: scale(0.7);
+                    }
+                    &__8 {
+                        transform: scale(0.8);
+                    }
+                    &__9 {
+                        transform: scale(0.9);
+                    }
+                    &__11 {
+                        transform: scale(1.1);
+                    }
+                    &__12 {
+                        transform: scale(1.2);
+                    }
                 }
 
                 @include rwd(1800px) {
@@ -216,6 +232,22 @@ $lg-image-height: $image-section-height * 1.4;
                     left: auto;
                     right: pxToRem(70);
                     transform: none;
+
+                    &__7 {
+                        transform: scale(0.7);
+                    }
+                    &__8 {
+                        transform: scale(0.8);
+                    }
+                    &__9 {
+                        transform: scale(0.9);
+                    }
+                    &__11 {
+                        transform: scale(1.1);
+                    }
+                    &__12 {
+                        transform: scale(1.2);
+                    }
                 }
 
                 @include rwd(1800px) {
@@ -249,6 +281,22 @@ $lg-image-height: $image-section-height * 1.4;
         @include lg {
             width: $lg-image-width; 
             height: $lg-image-height;
+        }
+
+        &__7 {
+            transform: translate(-50%, 0) scale(0.7);
+        }
+        &__8 {
+            transform: translate(-50%, 0) scale(0.8);
+        }
+        &__9 {
+            transform: translate(-50%, 0) scale(0.9);
+        }
+        &__11 {
+            transform: translate(-50%, 0) scale(1.1);
+        }
+        &__12 {
+            transform: translate(-50%, 0) scale(1.2);
         }
     }
 

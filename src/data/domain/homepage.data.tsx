@@ -18,7 +18,7 @@ type TabItemType = {
   image: string;
   alt: string;
   children?: React.ReactNode;
-  zoomAndCropImage?: number;
+  zoomAndCropImage?: 0.7 | 0.8 | 0.9 | 1 | 1.1 | 1.2;
 };
 
 const tabItems = (): TabItemType[] =>
