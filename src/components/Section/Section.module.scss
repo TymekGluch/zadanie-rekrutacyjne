@@ -14,6 +14,7 @@ $lg-image-height: $image-section-height * 1.4;
     gap: $primary-horizontal-space;
     width: 100vw;
     min-height: $image-section-height;
+    scroll-margin: pxToRem(32);
 
     @include lg {
         min-height: $lg-image-height;
@@ -241,6 +242,7 @@ $lg-image-height: $image-section-height * 1.4;
         height: $image-section-height;
         background-color: transparent;
         object-fit: contain;
+        object-position: top;
         transform: translate(-50%, 0);
         z-index: 11;
         

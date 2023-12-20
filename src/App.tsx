@@ -61,6 +61,7 @@ function App() {
                   image,
                   alt,
                   children,
+                  zoomAndCropImage,
                 },
                 index,
               ) => (
@@ -73,6 +74,7 @@ function App() {
                     variant={sectionVarinat}
                     image={image}
                     alt={alt}
+                    zoomAndCropImage={zoomAndCropImage}
                   >
                     {children}
                   </Section>

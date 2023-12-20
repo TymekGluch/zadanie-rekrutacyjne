@@ -48,7 +48,12 @@ const Cards: React.FC = () => {
                     alt=""
                   />
 
-                  <a href={href} className={styles.cards_anchor}>
+                  <a
+                    href={href}
+                    className={styles.cards_anchor}
+                    target={'_blank'}
+                    rel="noopener noreferrer"
+                  >
                     {linkText}
                   </a>
                 </div>
