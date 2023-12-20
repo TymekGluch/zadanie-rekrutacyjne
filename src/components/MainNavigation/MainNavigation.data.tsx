@@ -6,7 +6,7 @@ const listOfNavigationLink = [
 
   {
     name: 'Pricing',
-    link: '@',
+    link: '#download-the-extension',
   },
 
   {

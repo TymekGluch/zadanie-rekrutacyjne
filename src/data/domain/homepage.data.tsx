@@ -5,6 +5,7 @@ import {
   HEADING_COMPONENTS,
 } from '../../components/Section/Section.costants';
 import { CardsItemType } from '../../components/Cards/Cards.types';
+import { AccordionItemType } from '../../components/Accordion';
 
 type ValueOf<T> = T[keyof T];
 
@@ -84,4 +85,38 @@ const cardsHomeItems: CardsItemType[] = [
   },
 ];
 
-export { tabItems, cardsHomeItems };
+const accordionHomepageContent = [
+  {
+    panelHeading: 'What is Bookmark?',
+    text: `Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+    ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+    Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imd`,
+    id: 'accordion-item-1',
+  },
+
+  {
+    panelHeading: 'How can I request a new browser?',
+    text: `Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+    ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+    Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imd`,
+    id: 'accordion-item-2',
+  },
+
+  {
+    panelHeading: 'Is there a mobile app?',
+    text: `Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+    ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+    Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imd`,
+    id: 'accordion-item-3',
+  },
+
+  {
+    panelHeading: 'What about other Chromium browsers?',
+    text: `Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa,
+    ultricies non ligula. Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula.
+    Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. Suspendisse imd`,
+    id: 'accordion-item-4',
+  },
+] as AccordionItemType[];
+
+export { tabItems, cardsHomeItems, accordionHomepageContent };
