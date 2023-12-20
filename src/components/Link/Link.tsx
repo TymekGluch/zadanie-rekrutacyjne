@@ -78,6 +78,7 @@ const Link: React.FC<LinkProps> = ({
       onBlur={() => setIsIconLinkActive(false)}
       onMouseOver={() => setIsIconLinkActive(true)}
       onMouseLeave={() => setIsIconLinkActive(false)}
+      title={variant === LINK_VARIANTS.ICON ? ariaLabel : ''}
       aria-label={ariaLabel}
       {...componentsProps}
       style={customStyles}
