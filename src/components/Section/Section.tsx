@@ -19,7 +19,7 @@ type InternalProps = {
   text?: string;
   component: Components;
   headingComponents?: HedingComponents;
-  zoomAndCropImage?: number;
+  zoomAndCropImage?: 0.7 | 0.8 | 0.9 | 1 | 1.1 | 1.2;
 };
 
 type Props = (
@@ -48,6 +48,23 @@ const Section: React.FC<SectionProps> = ({
 }) => {
   const HeadingComponent = headingComponents;
   const SectionComponent = component;
+
+  const getImageClass = (zoomAndCrop: number): string => {
+    switch (zoomAndCrop) {
+      case 0.7:
+        return styles.section_image__7;
+      case 0.8:
+        return styles.section_image__8;
+      case 0.9:
+        return styles.section_image__9;
+      case 1.1:
+        return styles.section_image__11;
+      case 1.2:
+        return styles.section_image__12;
+      default:
+        return '';
+    }
+  };
 
   const content = (
     <>
@@ -90,10 +107,12 @@ const Section: React.FC<SectionProps> = ({
             )}
           >
             <img
-              className={classNames(styles.section_image)}
+              className={classNames(
+                styles.section_image,
+                getImageClass(zoomAndCropImage),
+              )}
               src={image}
               alt={alt}
-              style={{ transform: `scale(${zoomAndCropImage})` }}
             />
           </div>
 
