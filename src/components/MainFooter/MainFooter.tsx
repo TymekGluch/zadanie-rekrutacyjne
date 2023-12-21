@@ -3,7 +3,7 @@ import styles from './MainFooter.module.scss';
 import { footersNavigationItem } from './MainFooter.data';
 import { Link } from '../Link';
 import { LINK_COMPONENT, LINK_VARIANTS } from '../Link/Link.constants';
-import { Form } from '../Form';
+import { NewsletterForm } from '../NewsletterForm';
 import IconFB from '../../assets/icon-facebook.svg?react';
 import InonX from '../../assets/icon-twitter.svg?react';
 
@@ -11,7 +11,7 @@ const MainFooter: React.FC = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footer_formWrapper}>
-        <Form />
+        <NewsletterForm />
       </div>
 
       <div className={styles.footer_contentWrapper}>

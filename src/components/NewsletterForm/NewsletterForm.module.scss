@@ -1,0 +1,130 @@
+@import '/src/styles/index';
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: pxToRem(16);
+    width: 100%;
+    padding: calc($primary-vertical-space * 2) $primary-horizontal-space;
+    
+    @include md {
+        padding: calc($primary-vertical-space * 2) calc($primary-horizontal-space * 2);
+        gap: $primary-horizontal-space;
+    }
+
+    &_counter {
+        display: flex;
+        color: $primary-background;
+    }
+
+    &_counterValue {
+        display: block;
+        text-align: end;
+    }
+
+    &_heading {
+        color: $primary-background;
+        text-align: center;
+    }
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: pxToRem(16);
+    width: 100%;
+
+    &_buttonWrapper {
+        width: 100%;
+        height: pxToRem(79);
+
+        @include sm {
+            width: auto;
+            flex-shrink: 2;
+        }
+    }
+}
+
+.textField {
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    gap: pxToRem(8);
+    align-items: flex-start;
+    width: 100%;
+    background: $primary-background;
+    border: solid pxToRem(2) $primary-background;
+    border-radius: $radius;
+
+    &:focus-within {
+        background: $accent-item;
+        border: solid pxToRem(2) $accent-item;
+    }
+
+    &_label {
+        position: absolute;
+        top: pxToRem(11);
+        left: pxToRem(20);
+        transform: translate(0);
+        color: $primary-text;
+        opacity: 25%;
+        font-weight: 500;
+        transition: top 100ms ease-in-out;
+    }
+
+    &_input {
+        width: 100%;
+        padding: pxToRem(12) pxToRem(20);
+        border: none;
+        border-radius: pxToRem(3);
+        font-size: pxToRem(16);
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &_errorMessage {
+        display: none;
+        width: 100%;
+        padding: 0 pxToRem(8);
+        text-align: start;
+        font-style: italic;
+        color: $primary-background;
+        background-color: $accent-item;
+    }
+
+    &__error {
+        background: $accent-item;
+        border: solid pxToRem(2) $accent-item;
+
+        .textField_errorMessage {
+            display: flex;
+        }
+    }    
+
+    &__withContent {
+        .textField_label {
+            top: pxToRem(3);
+            color: $accent-item;
+            opacity: 85%;
+            font-size: pxToRem(12);
+        }
+
+        .textField_input {
+            padding-top: pxToRem(17);
+            padding-bottom: pxToRem(7);
+        }
+    }
+    
+    
+
+    @include sm {
+        width: pxToRem(350);
+    }
+}
