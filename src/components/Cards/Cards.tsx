@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from './Cards.module.scss';
 import classNames from 'classnames';
-import { cardsHomeItems } from '../../data/domain/homepage.data';
 import { Link } from '../Link';
 import { LINK_COMPONENT, LINK_VARIANTS } from '../Link/Link.constants';
+import { CardsItemType } from './Cards.types';
 
-const Cards: React.FC = () => {
+type CardsProps = {
+  content: CardsItemType[];
+};
+
+const Cards: React.FC<CardsProps> = ({ content }) => {
   const itemPosition = (identifier: number) => {
     const isTopPositionCondition = (idNumber: number): boolean => {
       return idNumber === 0 || idNumber % 3 === 0;
@@ -30,7 +34,7 @@ const Cards: React.FC = () => {
   return (
     <div className={styles.cards}>
       <ul className={styles.cards_list}>
-        {cardsHomeItems.map(
+        {content.map(
           ({ href, id, linkText, image, alt, heading, text }, index) => (
             <li
               id={id}

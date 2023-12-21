@@ -11,6 +11,7 @@ import {
 import { Tabs } from './components/Tabs';
 import {
   accordionHomepageContent,
+  cardsHomeItems,
   tabItems,
 } from './data/domain/homepage.data';
 import { Cards } from './components/Cards';
@@ -26,11 +27,23 @@ import {
   BOX_JUSTIFY_CONTENT,
   JUSTIFY_ON_DEVICE,
 } from './components/Box/Box.constants';
+import { Modal } from './components/Modal';
+import React from 'react';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+  const isModalOpenedRef = React.useRef<boolean>(false);
+
+  const handleMouseEnterNavigation = () => {
+    if (!isModalOpenedRef.current) {
+      setIsModalOpen(true);
+      isModalOpenedRef.current = true;
+    }
+  };
+
   return (
     <article className={styles.mainArticle}>
-      <MainNavigation />
+      <MainNavigation handleMouseEnter={handleMouseEnterNavigation} />
 
       <div className={styles.mainArticle_contentWrapper}>
         <Section
@@ -127,7 +140,7 @@ function App() {
           you've got a favourite you'd like us to prioritize."
           variant={SECTION_VARIANTS.WITHOUT_IMG}
         >
-          <Cards />
+          <Cards content={cardsHomeItems} />
         </Section>
 
         <Section
@@ -145,8 +158,17 @@ function App() {
             linkText="More info"
           />
         </Section>
-      </div>
 
+        <Modal
+          image="/illustration-features-tab-2.svg"
+          alt="tab 2 modal"
+          heading="Effortless Search"
+          text="A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free."
+          variant={SECTION_VARIANTS.LEFT_SIDE_IMG}
+          isOpen={isModalOpen}
+          setIsOpen={setIsModalOpen}
+        />
+      </div>
       <MainFooter />
     </article>
   );
