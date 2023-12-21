@@ -16,6 +16,7 @@
 
     &_counter {
         display: flex;
+        gap: pxToRem(5);
         color: $primary-background;
     }
 
