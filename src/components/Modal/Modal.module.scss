@@ -1,1 +1,45 @@
 @import '/src/styles/index';
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    width: 100vw;
+    background: rgba($primary-text, 70%);
+    transform: translate(-50%, -50%);
+    z-index: 100;
+
+    &__open {
+        display: flex;
+    }
+
+    &_content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: pxToRem(330);
+        min-height: pxToRem(300);
+        padding: calc($primary-vertical-space / 2) calc($primary-horizontal-space / 2);
+        background: $primary-background;
+        border: none;
+        border-radius: $radius;
+        overflow-x: hidden;
+
+        @include md {
+            width: 70%;
+        }
+    }
+
+    &_buttonWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        height: fit-content;
+    }
+}

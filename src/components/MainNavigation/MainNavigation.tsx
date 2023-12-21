@@ -12,7 +12,13 @@ import {
 import IconFB from '../../assets/icon-facebook.svg?react';
 import InonX from '../../assets/icon-twitter.svg?react';
 
-const MainNavigation: React.FC = () => {
+type MainNavigationProps = {
+  handleMouseEnter: React.MouseEventHandler<HTMLElement>;
+};
+
+const MainNavigation: React.FC<MainNavigationProps> = ({
+  handleMouseEnter,
+}) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState<boolean>(false);
 
   React.useEffect(() => {
@@ -32,7 +38,7 @@ const MainNavigation: React.FC = () => {
   };
 
   return (
-    <nav className={styles.mainNavigation}>
+    <nav className={styles.mainNavigation} onMouseEnter={handleMouseEnter}>
       <a href="/" className={styles.mainNavigation_link}>
         <img
           className={styles.mainNavigation_logo}
