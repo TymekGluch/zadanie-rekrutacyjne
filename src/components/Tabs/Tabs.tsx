@@ -40,8 +40,6 @@ const TabsComponent: React.FC<TabsProps> = ({
 
   const handleClick = (id: string): void => {
     setActiveElement(id);
-
-    console.log('test: ', id);
   };
 
   return (
