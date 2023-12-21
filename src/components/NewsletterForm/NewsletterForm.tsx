@@ -5,6 +5,7 @@ import { Link } from '../Link';
 import { LINK_COMPONENT, LINK_VARIANTS } from '../Link/Link.constants';
 import { resolvedCounterValue } from './NewsletterForm.handlers';
 import { newsletterShema } from './NewsletterForm.validation';
+import ErrorIcon from '../../assets/icon-error.svg?react';
 
 const NewsletterForm: React.FC = () => {
   const totalTime = 20000;
@@ -99,6 +100,8 @@ const NewsletterForm: React.FC = () => {
             value={email}
             onChange={handleInputChange}
           />
+
+          {errors.email && <ErrorIcon className={styles.textField_errorIcon} />}
 
           <p className={styles.textField_errorMessage}>{errors.email}</p>
         </div>

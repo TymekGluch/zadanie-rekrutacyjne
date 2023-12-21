@@ -77,6 +77,12 @@
         transition: top 100ms ease-in-out;
     }
 
+    &_errorIcon {
+        position: absolute;
+        top: pxToRem(11);
+        right: pxToRem(20);
+    }
+
     &_input {
         width: 100%;
         padding: pxToRem(12) pxToRem(20);
