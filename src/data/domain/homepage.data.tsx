@@ -59,11 +59,11 @@ const tabItems = (): TabItemType[] =>
     },
 
     {
-      heading: 'Effortless Search',
-      text: `Instantly find what you're looking for. Swift and efficient searching to streamline your online experience. Explore seamlessly.`,
+      heading: 'Intelligent search',
+      text: `Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks.`,
       hedingComponent: HEADING_COMPONENTS.H3,
       sectionComponent: SECTION_COMPONENTS.SECTION,
-      sectionVarinat: SECTION_VARIANTS.RIGHT_SIDE_IMG,
+      sectionVarinat: SECTION_VARIANTS.LEFT_SIDE_IMG,
       image: '/illustration-features-tab-2.svg',
       alt: 'tab 2',
       children: (
@@ -85,8 +85,8 @@ const tabItems = (): TabItemType[] =>
     },
 
     {
-      heading: 'Simplified Sharing',
-      text: 'Share content hassle-free. Effortlessly distribute your favorite content across platforms. Connect with ease and simplicity.',
+      heading: 'Share your bookmarks',
+      text: 'Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.',
       hedingComponent: HEADING_COMPONENTS.H3,
       sectionComponent: SECTION_COMPONENTS.SECTION,
       sectionVarinat: SECTION_VARIANTS.LEFT_SIDE_IMG,

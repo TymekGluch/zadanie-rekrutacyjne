@@ -162,8 +162,8 @@ function App() {
         <Modal
           image="/illustration-features-tab-2.svg"
           alt="tab 2 modal"
-          heading="Effortless Search"
-          text="A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free."
+          heading="Intelligent Search"
+          text="Our powerful search feature will help you find saved sites in no time at all. No need to trawl through all of your bookmarks."
           variant={SECTION_VARIANTS.LEFT_SIDE_IMG}
           isOpen={isModalOpen}
           setIsOpen={setIsModalOpen}
