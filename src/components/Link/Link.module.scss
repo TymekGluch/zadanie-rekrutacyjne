@@ -40,7 +40,7 @@
         background: $secondary-background;
         color: $primary-background;
         border: solid pxToRem(2) $secondary-background;
-        border-radius: pxToRem(8);
+        border-radius: $radius;
         font-weight: 500;
         text-transform: none;
         letter-spacing: 0;
@@ -64,7 +64,7 @@
         background: $light-button;
         color: $primary-text;
         border: solid pxToRem(2) $light-button;
-        border-radius: pxToRem(8);
+        border-radius: $radius;
         box-shadow: createBoxShadow($shadow);
         font-weight: 500;
         text-transform: none;
@@ -88,7 +88,7 @@
         background: $accent-item;
         color: $primary-background;
         border: solid pxToRem(2) $accent-item;
-        border-radius: pxToRem(8);
+        border-radius: $radius;
         font-weight: 500;
         text-transform: none;
         letter-spacing: 0;

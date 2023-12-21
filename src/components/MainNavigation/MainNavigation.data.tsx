@@ -11,7 +11,7 @@ const listOfNavigationLink = [
 
   {
     name: 'Contact',
-    link: '@',
+    link: '#contact',
   },
 ] as const;
 
