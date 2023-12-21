@@ -20,6 +20,7 @@ const NewsletterForm: React.FC = () => {
 
   const [email, setEmail] = React.useState<string>('');
   const [errors, setErrors] = React.useState<FormErrors>({});
+  const [isSuccess, setIsSuccess] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     const startTime = Date.now();
@@ -52,6 +53,7 @@ const NewsletterForm: React.FC = () => {
       .validate({ email })
       .then(() => {
         setErrors((prevErrors) => ({ ...prevErrors, email: undefined }));
+        setIsSuccess(true);
       })
       .catch((error) => {
         setErrors((prevErrors) => ({
@@ -68,54 +70,64 @@ const NewsletterForm: React.FC = () => {
           {resolvedCounterValue(value)}
         </span>
 
-        <span> Already joined</span>
+        <span>Already joined</span>
       </p>
 
-      <h2 className={styles.formSection_heading}>
-        Stay up-to-date with what we're doing
-      </h2>
+      {!isSuccess ? (
+        <>
+          <h2 className={styles.formSection_heading}>
+            Stay up-to-date with what we're doing
+          </h2>
 
-      <form
-        className={classNames(styles.formSection_form, styles.form)}
-        onSubmit={handleSubmit}
-        noValidate
-      >
-        <div
-          className={classNames(
-            styles.form_textField,
-            styles.textField,
-            errors.email && styles.textField__error,
-            email !== '' && styles.textField__withContent,
-          )}
-        >
-          <label htmlFor="emailInput" className={styles.textField_label}>
-            Enter your email address
-          </label>
-
-          <input
-            className={styles.textField_input}
-            type="email"
-            id="emailInput"
-            name="email"
-            value={email}
-            onChange={handleInputChange}
-          />
-
-          {errors.email && <ErrorIcon className={styles.textField_errorIcon} />}
-
-          <p className={styles.textField_errorMessage}>{errors.email}</p>
-        </div>
-
-        <div className={styles.form_buttonWrapper}>
-          <Link
-            component={LINK_COMPONENT.BUTTON}
-            variant={LINK_VARIANTS.CONTAINED_DARK}
-            type="submit"
+          <form
+            className={classNames(styles.formSection_form, styles.form)}
+            onSubmit={handleSubmit}
+            noValidate
           >
-            Contact Us
-          </Link>
-        </div>
-      </form>
+            <div
+              className={classNames(
+                styles.form_textField,
+                styles.textField,
+                errors.email && styles.textField__error,
+                email !== '' && styles.textField__withContent,
+              )}
+            >
+              <label htmlFor="emailInput" className={styles.textField_label}>
+                Enter your email address
+              </label>
+
+              <input
+                className={styles.textField_input}
+                type="email"
+                id="emailInput"
+                name="email"
+                value={email}
+                onChange={handleInputChange}
+              />
+
+              {errors.email && (
+                <ErrorIcon className={styles.textField_errorIcon} />
+              )}
+
+              <p className={styles.textField_errorMessage}>{errors.email}</p>
+            </div>
+
+            <div className={styles.form_buttonWrapper}>
+              <Link
+                component={LINK_COMPONENT.BUTTON}
+                variant={LINK_VARIANTS.CONTAINED_DARK}
+                type="submit"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </form>
+        </>
+      ) : (
+        <h2 className={styles.formSection_heading}>
+          Thank you for subscribing to our newsletter!
+        </h2>
+      )}
     </section>
   );
 };
